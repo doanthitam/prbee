@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------
 
 // ---- font-family
-$font-web: Ropa Sans ,YuGothic,icomoon, Avenir,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font-web: "M PLUS Rounded 1c", Ropa Sans ,YuGothic,icomoon, Avenir,"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 // ---- breakpoints
 $breakpoints: (
@@ -45,5 +45,14 @@ $base-url: '../images' !default;
 // http://chir.ag/projects/name-that-color
 
 $color-transparent: transparent;
+$bg: #dbedfa;
 $w: #fff;
-$b: #000;
+$black: #000;
+$blue: #009bdc;
+$navy: #183553;
+$or: #f5a100;
+$yel: #f9f4a9;
+$yel_2: #ffe900;
+$gr: #76bc2d;
+$red: #e60012;
+$grey: #dcdddd;
