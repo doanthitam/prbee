@@ -67,7 +67,7 @@ img {
     display: flex;
     figure {
       width:487px;
-      margin: auto;
+      margin: 0 auto;
     }
     p {
       font-size: 28px;
@@ -75,11 +75,13 @@ img {
       font-weight: bold;
       padding: 0 165px;
       writing-mode: vertical-rl;
+      word-wrap: break-word;
+      white-space: nowrap;
     }
   }
   .price {
     width: 352px;
-    margin: 0 auto;
+    margin: -136px auto 48px;
   }
   .building {
     width: 100%;
@@ -162,10 +164,37 @@ img {
 .enjoylife {
   .sns_bg {
     background: $w;
-    width: 341px;
-    height: 342px;
+    width: 300px;
+    height: 300px;
     border-radius: 100%;
     position: relative;
+    &:nth-of-type(1) {
+      padding: 43px 59px 41px 59px;
+      &:after {
+        content: "";
+        background: url("../images/twiter_icon.png") no-repeat;
+        width: 65px;
+        height: 58px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-size: contain;
+      }
+    }
+    &:nth-of-type(2) {
+      &:after {
+        content: "";
+        background: url("../images/ins_icon.png") no-repeat;
+        width: 63px;
+        height: 63px;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-size: contain;
+      }
+    }
     p {
       font-size: 14px;
       line-height: 23px;
@@ -174,34 +203,37 @@ img {
 
   }
   .right {
-    &:after {
-      content: "";
-      background: url("../images/twiter_icon.png") no-repeat;
-      width: 65px;
-      height: 58px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-size: contain;
-    }
     p {
       &:nth-of-type(1) {
         color: $blue;
+        letter-spacing: 1px;
+        padding: 0 18px 101px 0px;
+        text-align: justify;
+        text-indent: 16px;
       }
     }
   }
-  .left {
-    &:after {
-      content: "";
-      background: url("../images/ins_icon.png") no-repeat;
-      width: 63px;
-      height: 63px;
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      background-size: contain;
+}
+.communicte {
+  background: $w;
+  h3 {
+    text-align: center;
+  }
+  &_inner {
+    .left {
+      background: $grey;
+      p {
+        background: $black;
+        &:nth-of-type(1) {
+          width: 333px;
+          height: 58px;
+          line-height: 58px;
+        }
+      }
+      figure {
+        width: 447px;
+        margin: 0 auto;
+      }
     }
   }
 }
