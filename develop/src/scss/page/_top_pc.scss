@@ -525,51 +525,82 @@ em {
   }
 
 }
+.bd-l {
+  position: relative;
+  padding-left: 10px;
+  font-size: 20px;
+  border-bottom: 1px solid $black;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  &:after {
+    content: "";
+    position: absolute;
+    background: $black;
+    width: 5px;
+    height: 27px;
+    top: 0;
+    left: 0;
+
+  }
+}
 .option {
+  background: $w;
   ul {
+    padding-left: 154px;
     li {
       float: left;
       width: calc(100% / 4);
       &:nth-of-type(1) {
         figure {
-          width: 170px;
+          width: 44%;
         }
       }
       &:nth-of-type(2) {
         figure {
-          width: 128px;
+          width: 43%;
         }
       }
       &:nth-of-type(3) {
         figure {
-          width: 188px;
+          width: 48%;;
         }
       }
       &:nth-of-type(4) {
         figure {
-          width: 155px;
+          width: 46%;
         }
       }
       &:nth-of-type(5) {
         figure {
-          width: 225px;
+          width: 52%;
         }
       }
       &:nth-of-type(6) {
         figure {
-          width: 137px;
+          width: 35%;
         }
       }
       &:nth-of-type(7) {
         figure {
-          width: 173px;
+          width: 47%;
         }
       }
       &:nth-of-type(8) {
         figure {
-          width: 158px;
+          width: 45%;
         }
       }
+    }
+  }
+}
+.partner {
+  &_cover {
+    figure {
+      width: 177px;
+    }
+    article {
+      width: calc(100% - 177px);
+      padding: 0 40px;
     }
   }
 }
