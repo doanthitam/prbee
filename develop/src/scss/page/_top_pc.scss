@@ -111,6 +111,20 @@ em {
     }
   }
 }
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  background: $w;
+}
+.visible-title {
+  visibility: visible;
+}
+.main-padding {
+  padding-top: 123px;
+}
 .prbee {
   padding: 34px 0 49px;
   &_top {
