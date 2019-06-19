@@ -73,9 +73,9 @@ main {
           left: percentage(60 / 600);
           font-size: 18px;
           color: $navy;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           span {
-            font-size: 18px;
+            font-size: 14px;
             color: $w;
             display: block;
             letter-spacing: 1px;
@@ -83,13 +83,13 @@ main {
           em {
             color: $w;
             font-style: normal;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
           }
         }
       }
     }
     &_txt {
-      margin-top: percentage(-80 / 600);
+      margin-top: percentage(-100 / 600);
       p{
         padding: percentage(20 / 600) percentage(40 / 600);
       }

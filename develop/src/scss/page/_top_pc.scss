@@ -14,7 +14,7 @@ img {
 }
 .container {
   min-width: 1280px;
-  background: $bg;
+  background: $w;
 }
 .row {
   max-width: 1280px;
@@ -51,6 +51,18 @@ em {
   line-height: 58px;
   margin: -58px auto 0;
 }
+.mobile_number {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: $black;
+  &:after {
+    content: "";
+    position: absolute;
+    background: url('../images/mobile_icon.png')no-repeat;
+    left: 0;
+  }
+}
 .show_sp {
   display: none;
 }
@@ -59,19 +71,38 @@ em {
     width: 151px;
     padding: 24px 0 15px;
   }
+  p {
+    float: left;
+    padding: 53px 20px 15px 39px;
+    font-size: 14px;
+  }
   nav {
-    padding: 41px 0 0;
+    padding: 53px 20px 0;
     ul {
       display: flex;
       li {
-        padding-right: 54px;
+        &:not(:last-child) {
+          padding-right: 54px;
+        }
         a {
           font-size: 14px;
           font-weight: bold;
           color: $black;
           transition: all .3s ease-in-out;
-          font-family: "Yugothic";
           display: block;
+          text-decoration: none;
+          padding-left: 28px;
+          &.mobile_number {
+            font-size: 18px;
+            margin-top: -6px;
+            &:after {
+              width: 24px;
+              height: 25px;
+              background-size: contain;
+              top: 0;
+              left: 0;
+            }
+          }
           &:hover {
             opacity: 0.5;
           }
@@ -81,27 +112,26 @@ em {
   }
 }
 .prbee {
-  background: $w;
-  padding: 50px 0 49px;
+  padding: 34px 0 49px;
   &_top {
     display: flex;
-    figure {
-      width:487px;
-      margin: 0 auto;
+    align-items: center;
+    .bee_character {
+      width: 280px;
     }
+  }
+  &_txt {
+    padding: 0 58px;
     p {
-      font-size: 28px;
+      font-size: 25px;
       letter-spacing: 2px;
       font-weight: bold;
-      padding: 0 165px;
-      writing-mode: vertical-rl;
-      word-wrap: break-word;
-      white-space: nowrap;
+      margin: 3px 0;
     }
   }
   .price {
-    width: 352px;
-    margin: -24px auto 32px;
+    width: 270px;;
+    // margin: -24px auto 32px;
   }
   .building {
     width: 100%;
@@ -139,6 +169,7 @@ em {
     }
   }
   &_txt {
+    background: url('../images/intro_txt_bg.png') repeat;
     position: absolute;
     bottom: 6px;
     width: 100%;
@@ -147,18 +178,17 @@ em {
       height: 229px;
     }
     .left {
-      width: 40%;
+      width: 50%;
       p {
-        background: #002638;
         opacity: 0.85;
         color: $w;
-        font-size: 18px;
-        line-height: 30px;
-        padding: 8% 31% 9% 66px;
+        font-size: 17px;
+        line-height: 32px;
+        padding: 50px 111px;
       }
     }
     .right {
-      width: 60%;
+      width: 50%;
       p {
         color: $navy;
         background: $w;
@@ -182,10 +212,27 @@ em {
   }
 }
 .enjoylife {
-  padding: 68px 0 0;
+  background: $bg;
+  padding: 75px 0;
+  margin-top: -6px;
+  figure {
+    width: 980px;
+  }
+  .clearfix {
+    position: relative;
+  }
+  &_sns {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   &_eat {
+    padding-bottom: 55px;
+    .enjoylife_sns {
+      right: 57px;
+    }
     .sns_bg {
-      padding: 42px 59px 41px 59px;
+      padding: 43px 72px;
       &:after {
         content: "";
         background: url('../images/twiter_icon.png') no-repeat;
@@ -197,11 +244,21 @@ em {
         transform: translate(-50%, -50%);
         background-size: contain;
       }
+      p {
+        text-align: center;
+        &.blue_txt {
+          color: #009bdc;
+          padding: 0 0 101px 0px;
+        }
+      }
     }
   }
   &_painting {
+    .enjoylife_sns {
+      left: 57px;
+    }
     .sns_bg {
-      padding: 100px 40px 54px 62px;
+      padding: 124px 50px 35px;
       &:after {
         content: "";
         background: url('../images/ins_icon.png') no-repeat;
@@ -214,7 +271,7 @@ em {
         background-size: contain;
       }
       p {
-        margin: 4px 0;
+        margin: 8px 0;
       }
     }
   }
@@ -237,18 +294,16 @@ em {
         color: $blue;
         letter-spacing: 1px;
         padding: 0 18px 101px 0px;
-        text-align: justify;
-        text-indent: 16px;
       }
     }
   }
 }
 .communicte {
   background: $w;
-  padding: 48px 0;
-  margin: 72px 0;
+  padding: 61px 0;
   h3 {
     text-align: center;
+    font-size: 24px;
   }
   &_inner {
     padding: 95px 0 49px;
@@ -273,17 +328,17 @@ em {
       }
       figure {
         width: 447px;
-        margin: 17px auto;
+        margin: 37px auto;
       }
     }
     .right {
       background: $yel;
-      height: 277px;
       p {
         background: $or;
       }
       .list_inner {
         position: relative;
+        padding: 20px 0;
         &:after {
           content: "";
           position: absolute;
@@ -327,6 +382,7 @@ em {
     letter-spacing: 3px;
     em {
       color: $red;
+      font-size: 40px;
     }
   }
   &_help {
@@ -365,6 +421,8 @@ em {
         &:after {
           content: "";
           position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
         }
         &:nth-of-type(1) {
           &:after {
@@ -372,8 +430,7 @@ em {
             background-size: contain;
             width: 76px;
             height: 77px;
-            top: 18px;
-            right: 66px;
+            top: 6px;
           }
         }
         &:nth-of-type(2) {
@@ -383,17 +440,15 @@ em {
             width: 248px;
             height: 51px;
             top: 30px;
-            left: 71px;
           }
         }
         &:nth-of-type(3) {
           &:after {
             background: url('../images/mobile_tool.png')no-repeat;
             background-size: contain;
-            width: 108px;
-            height: 107px;
-            top: 0;
-            left: 10px;
+            width: 84px;
+            height: 85px;
+            top: 6px;
           }
         }
         p {
@@ -401,7 +456,7 @@ em {
           width: 292px;
           font-size: 15px;
           color: $w;
-          margin-bottom: 99px;;
+          margin-bottom: 89px;
         }
         span {
           padding: 0 0px 0 31px;
@@ -441,16 +496,16 @@ em {
         text-align: left
       }
       .txt_yel {
-        padding: 20px 0 0 126px;
+        padding: 20px 114px 0 126px;
       }
       figure {
-        margin-bottom: -6px;
       }
       .clearfix {
         border-bottom: 1px solid $w;
         margin-right: 117px;
+        height: 161px;
         p {
-          padding: 30px 0 0 38px;
+          padding: 24px 0 21px 38px;
           font-size: 15px;
           line-height: 27px;
           color: $w;
@@ -468,12 +523,14 @@ em {
       }
     }
     .right {
-      margin-top: 6px;
-      figure {
-        width: 106px;
-      }
-      p {
-        width: calc(100% - 106px);
+      .women {
+        figure {
+          width: 106px;
+          margin-top: 12px;
+        }
+        p {
+          width: calc(100% - 106px);
+        }
       }
     }
   }
@@ -552,8 +609,6 @@ em {
   position: relative;
   padding-left: 15px;
   font-size: 20px;
-  padding-bottom: 5px;
-  margin-bottom: 30px;
   letter-spacing: 1px;
   &:after {
     content: "";
@@ -567,16 +622,24 @@ em {
 }
 .option {
   background: $w;
-  padding-bottom: 47px;
-  padding: 50px 0 30px;
-  margin: 87px 0 0;
+  padding: 0 0 30px;
+  h4 {
+    margin-bottom: 67px;
+  }
   ul {
-    padding-left: 105px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     li {
-      float: left;
-      width: calc(100% / 4);
+      width: 190px;
       margin-bottom: 23px;
+      text-align: center;
+      margin-bottom: 68px;
+      margin-left: 51.5px;
+      margin-right: 51.5px;
       figure {
+        // width: 222px;
+        height: 149px;
         margin: 0 auto;
         figcaption {
           text-align: center;
@@ -585,42 +648,42 @@ em {
       }
       &:nth-of-type(1) {
         figure {
-          width: 44%;
+          width: 147px;
         }
       }
       &:nth-of-type(2) {
         figure {
-          width: 43%;
+          width: 147px;
         }
       }
       &:nth-of-type(3) {
         figure {
-          width: 48%;;
+          width: 151px;
         }
       }
       &:nth-of-type(4) {
         figure {
-          width: 46%;
+          width: 142px;
         }
       }
       &:nth-of-type(5) {
         figure {
-          width: 52%;
+          width: 148px;
         }
       }
       &:nth-of-type(6) {
         figure {
-          width: 35%;
+          width: 84px;
         }
       }
       &:nth-of-type(7) {
         figure {
-          width: 47%;
+          width: 126px;
         }
       }
       &:nth-of-type(8) {
         figure {
-          width: 45%;
+          width: 126px;
         }
       }
     }
@@ -630,7 +693,7 @@ em {
   background: $w;
   padding-bottom: 60px;
   h4 {
-    margin-bottom: 0;
+    margin-bottom: 28px;
   }
   &_cover {
     padding: 30px 0;
@@ -669,6 +732,9 @@ em {
 .contact {
   background: $w;
   padding: 0 0 80px;
+  h4 {
+    margin-bottom: 60px;
+  }
   p {
     text-align: center;
     font-size: 14px;
@@ -737,6 +803,45 @@ em {
       height: 124px;
     }
   }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    button {
+      cursor: pointer;
+      width: 183px;
+      height: 52px;
+      border: none;
+      display: block;
+      padding: 0;
+      background: $black;
+      font-size: 15px;
+      line-height: 52px;
+      color: #fff;
+      outline: none;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      transition: all .3s;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        right: 14px;
+        top: 22px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        transition: all .3s ease-out;
+      }
+    }
+  }
 }
 .footer {
   background: $grey;
@@ -770,17 +875,13 @@ em {
     }
     .right {
       margin-left: 150px;
-      a {
-        display: block;
+      .mobile_number {
         font-size: 30px;
-        position: relative;
         padding-bottom: 20px;
         padding-left: 48px;
         border-bottom: 1px solid $black;
         margin-bottom: 25px;
-        text-decoration: none;
         padding-right: 21px;
-        color: $black;
         &:after {
           content: "";
           position: absolute;
