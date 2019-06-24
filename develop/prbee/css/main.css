@@ -511,6 +511,12 @@ textarea {
   .show_sp {
     display: none;
   }
+  .header,
+  .logo,
+  .header ul li,
+  .header ul li a {
+    transition: all .5s ease;
+  }
   .header .logo {
     width: 151px;
     padding: 24px 0 15px;
@@ -553,6 +559,12 @@ textarea {
   .header nav ul li a:hover {
     opacity: 0.5;
   }
+  .bounceInLeft {
+    animation-name: bounceInLeft;
+  }
+  .bounceInRight {
+    animation-name: bounceInRight;
+  }
   .fixed-header {
     position: fixed;
     top: 0;
@@ -560,6 +572,60 @@ textarea {
     width: 100%;
     z-index: 9;
     background: #fff;
+    animation: smoothScroll .5s forwards;
+  }
+  @keyframes smoothScroll {
+    0% {
+      transform: translateY(-40px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes bounceInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-500px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(30px);
+    }
+    80% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes bounceInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(500px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-30px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .fadeInDown {
+    animation-name: fadeInDown;
   }
   .visible-title {
     visibility: visible;
@@ -578,9 +644,15 @@ textarea {
   }
   .prbee_top .bee_character {
     width: 280px;
+    animation-duration: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
   }
   .prbee_txt {
     padding: 0 58px;
+    animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
   }
   .prbee_txt p {
     font-size: 25px;
@@ -590,9 +662,15 @@ textarea {
   }
   .prbee .price {
     width: 270px;
+    animation-duration: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
   }
   .prbee .building {
     width: 100%;
+    animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
   }
   .intro {
     position: relative;
@@ -1375,6 +1453,13 @@ textarea {
   .txt_yel {
     color: #ffe900;
   }
+  .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    background: #fff;
+  }
   .header .logo {
     width: 27.03125%;
     padding: 3.90625% 0 3.125%;
@@ -1423,19 +1508,38 @@ textarea {
     width: 100%;
   }
   .fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 9;
-    background: #fff;
+    transition: all .3s ease-in-out;
+  }
+  .fixed-header .logo {
+    width: 17.1875%;
+    padding: 3.125% 0 2.34375%;
+    font-size: 0;
+    transition: all .3s ease-in-out;
+  }
+  .fixed-header p {
+    font-size: 12px;
+    margin-bottom: 1.5625%;
+  }
+  .fixed-header nav {
+    position: relative;
+  }
+  .fixed-header nav:after {
+    content: "";
+    position: absolute;
+    background: url("../images/nav_bee_sp.png") no-repeat;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    top: -48px;
+    right: 6.25%;
   }
   .visible-title {
     visibility: visible;
   }
   main .prbee {
     background: #fff;
-    padding: 7.8125% 0 9.0625%;
+    padding: 54.6875% 0 9.0625%;
   }
   main .prbee_top {
     padding: 0 3.33333%;
@@ -1570,17 +1674,17 @@ textarea {
     padding: 0 10px 34px 10px;
   }
   main .enjoylife_painting .enjoylife_sns {
-    left: 36px;
-    bottom: 50px;
+    left: 22px;
+    bottom: 47px;
   }
   main .enjoylife_painting .sns_bg {
-    padding: 105px 0 0;
+    padding: 72px 0 0;
   }
   main .enjoylife_painting .sns_bg:after {
     content: "";
     background: url("../images/ins_icon.png") no-repeat;
-    width: 63px;
-    height: 63px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 30px;
     left: 50%;
@@ -1595,7 +1699,7 @@ textarea {
     line-height: 18px;
   }
   main .communicte {
-    padding: 61px 0;
+    padding: 11.25% 0;
   }
   main .communicte h3 {
     font-size: 17px;
@@ -1713,10 +1817,6 @@ textarea {
   }
   main .service .list:nth-of-type(1) li {
     padding: 20px 0;
-  }
-  main .service .list:nth-of-type(1) li:nth-of-type(1) {
-    height: 110px;
-    padding: 26px 0;
   }
   main .service .list:nth-of-type(1) li span:nth-of-type(1) {
     font-size: 18px;

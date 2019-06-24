@@ -30,6 +30,11 @@ em {
   color: $yel_2;
 }
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  background: $w;
   .logo {
     width: percentage(173 / 640);
     padding: percentage(25/ 640) 0 percentage(20 /640);
@@ -68,7 +73,6 @@ em {
           font-weight: bold;
           color: $w;
           transition: all .3s ease-in-out;
-          font-family: "Yugothic";
           display: block;
           text-decoration: none;
           width: 100%;
@@ -78,12 +82,18 @@ em {
   }
 }
 .fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 9;
-  background: $w;
+  transition: all .3s ease-in-out;
+  .logo {
+    width: percentage(110/ 640);
+    padding: percentage(20/ 640) 0 percentage(15/ 640);
+    font-size: 0;
+    transition: all .3s ease-in-out;
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: percentage(10 / 640);
+  }
 }
 .visible-title {
   visibility: visible;
@@ -91,7 +101,7 @@ em {
 main {
   .prbee {
     background: $w;
-    padding: percentage(50 / 640) 0 percentage(58 / 640);
+    padding: percentage(350 / 640) 0 percentage(58 / 640);
     &_top {
       padding: 0 percentage(20 / 600);
       figure {
@@ -205,8 +215,7 @@ main {
       .sns_bg {
         background: $w;
         width: 170px;
-        height: 170px;
-        border-radius: 100%;
+        height: 100%;
         position: relative;
         padding: 24px 18px;
         &:after {
@@ -232,16 +241,16 @@ main {
     }
     &_painting {
       .enjoylife_sns {
-        left: 36px;
-        bottom: 50px;
+        left: 22px;
+        bottom: 47px;
       }
       .sns_bg {
-        padding: 105px 0 0;
+        padding: 72px 0 0;
         &:after {
           content: "";
           background: url('../images/ins_icon.png') no-repeat;
-          width: 63px;
-          height: 63px;
+          width: 30px;
+          height: 30px;
           position: absolute;
           top: 30px;
           left: 50%;
@@ -261,7 +270,7 @@ main {
     }
   }
   .communicte {
-    padding: 61px 0;
+    padding: percentage(72 / 640) 0;
     h3 {
       font-size: 17px;
       text-align: center;
@@ -372,10 +381,6 @@ main {
       &:nth-of-type(1) {
         li {
           padding: 20px 0;
-          &:nth-of-type(1){
-            height: 110px;
-            padding: 26px 0;
-          }
           span {
             &:nth-of-type(1){
               font-size: 18px;
