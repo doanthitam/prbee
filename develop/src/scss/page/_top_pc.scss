@@ -134,6 +134,10 @@ em {
   background: $w;
   animation: smoothScroll .5s forwards;
 }
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: none;
+}
 //keyframes/
 @keyframes smoothScroll {
 	0% {
@@ -166,7 +170,7 @@ em {
    }
    60% {
       opacity: 1;
-      transform: translateX(-30px);
+      transform: translateX(30px);
    }
    80% {
       transform: translateX(10px);
@@ -202,15 +206,11 @@ em {
     .bee_character {
       width: 280px;
       animation-duration: 2s;
-      animation-duration: 2s;
-      animation-fill-mode: both;
     }
   }
   &_txt {
     padding: 0 58px;
     animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
     p {
       font-size: 25px;
       letter-spacing: 2px;
@@ -221,15 +221,11 @@ em {
   .price {
     width: 270px;
     animation-duration: 2s;
-    animation-duration: 2s;
-    animation-fill-mode: both;
     // margin: -24px auto 32px;
   }
   .building {
     width: 100%;
     animation-duration: 1s;
-    animation-duration: 1s;
-    animation-fill-mode: both;
   }
 }
 .intro {
@@ -318,13 +314,16 @@ em {
   }
   &_sns {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
   &_eat {
     padding-bottom: 55px;
     .enjoylife_sns {
       right: 57px;
+      top: 155px;
+      // animation-name: bounceInRight;
+    }
+    figure {
+      // animation-name: bounceInLeft;
     }
     .sns_bg {
       padding: 43px 72px;
@@ -349,8 +348,15 @@ em {
     }
   }
   &_painting {
+    // display: flex;
+    // align-items: center;
     .enjoylife_sns {
       left: 57px;
+      top: 155px;
+      z-index: 1;
+    }
+    figure {
+      // animation-name: bounceInRight;
     }
     .sns_bg {
       padding: 124px 50px 35px;

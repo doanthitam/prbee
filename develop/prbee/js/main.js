@@ -39,23 +39,18 @@ $('a[href^="#"]').click(function(){
   return false;
 });
 
-//animation content//
-function animation(){
-  $('.fadeInUp').each(function(){
-    //ターゲットの位置を取得
-    var target = $(this).offset().top;
-    //スクロール量を取得
-    var scroll = $(window).scrollTop();
-    //ウィンドウの高さを取得
-    var windowHeight = $(window).height();
-    //ターゲットまでスクロールするとフェードインする
-    if (scroll > target - windowHeight){
-      $(this).css('opacity','1');
-      $(this).css('transform','translateY(0)');
+$(window).on('load scroll', function(){
+  var elem = $('.animated');
+  elem.each(function () {
+    var isAnimate = $(this).data('animate');
+    var elemOffset = $(this).offset().top;
+    var scrollPos = $(window).scrollTop();
+    var wh = $(window).height();
+
+    if(scrollPos > elemOffset - wh + (wh / 2)){
+      $(this).addClass(isAnimate);
+    }else{
+      $(this).removeClass(isAnimate);
     }
   });
-}
-  animation();
-$(window).scroll(function (){
-  animation();
 });

@@ -37,27 +37,17 @@ em {
   background: $w;
   .logo {
     width: percentage(173 / 640);
-    padding: percentage(25/ 640) 0 percentage(20 /640);
+    padding: 10px 0;
     margin: 0 auto;
+    font-size: 0;
   }
   p {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: percentage(30 / 640);
+    padding-bottom: 15px;
   }
   nav {
-    position: relative;
-    &:after {
-      content: "";
-      position: absolute;
-      background: url('../images/nav_bee_sp.png') no-repeat;
-      width: 50px;
-      height: 50px;
-      background-size: contain;
-      top: -48px;
-      right: percentage(40 / 640);
-    }
     ul {
       display: flex;
       li {
@@ -81,18 +71,33 @@ em {
     }
   }
 }
+//transition//
+.header,
+nav,
+nav ul,
+nav ul li,
+nav ul li a {
+  transition: .5s;
+}
 .fixed-header {
+  transition: .5s;
   width: 100%;
-  transition: all .3s ease-in-out;
-  .logo {
-    width: percentage(110/ 640);
-    padding: percentage(20/ 640) 0 percentage(15/ 640);
-    font-size: 0;
-    transition: all .3s ease-in-out;
+.hide_sp {
+  transition: .5s;
+  margin-top: -114px;
+}
+@media screen and (max-width: 375px) {
+  .hide_sp {
+    margin-top: -108px;
   }
-  p {
-    font-size: 12px;
-    margin-bottom: percentage(10 / 640);
+}
+@media screen and (max-width: 320px) {
+  .hide_sp {
+    margin-top: -101px;
+  }
+}
+  nav {
+    transition: .5s;
   }
 }
 .visible-title {
@@ -193,79 +198,103 @@ main {
     }
   }
   .enjoylife {
-    background: $bg;
     padding: percentage(75 / 640) 0;
     margin-top: per(-6 / 640);
     figure {
-      width: 100%;
+      width: 50%;
     }
-    .clearfix {
+    .sns_bg {
+      background: $w;
+      height: 100%;
       position: relative;
-    }
-    &_sns {
-      position: absolute;
+      p {
+        font-size: 12px;
+        line-height: 18px;
+        color: $black;
+        text-align: center;
+      }
     }
     &_eat {
       padding-bottom: percentage(55 / 640);
       .enjoylife_sns {
-        left: 4px;
-        top: 50%;
-        transform: translateY(-50%);
+        float: left;
+        width: 50%;
+        height: percentage(494.5 / 640);
+        @media screen and (max-width: 320px) {
+          .sns_bg {
+            &:after {
+              width: percentage(39 / 320);
+              top: percentage(140 / 320);
+            }
+            p {
+              padding: percentage(10 / 320) percentage(10 / 320) 0;
+              &.blue_txt {
+                color: #009bdc;
+                margin-bottom: percentage(30 / 320);
+              }
+            }
+          }
+          p {
+            font-size: 11px;
+          }
+        }
       }
       .sns_bg {
-        background: $w;
-        width: 170px;
-        height: 100%;
-        position: relative;
-        padding: 24px 18px;
         &:after {
           content: "";
           background: url('../images/twiter_icon.png') no-repeat;
-          width: 30px;
+          width: percentage(45 / 320);
           height: 22px;
           position: absolute;
-          top: 76px;
+          top: percentage(145 / 320);
           left: 50%;
           transform: translate(-50%, -50%);
           background-size: contain;
         }
         p {
-          text-align: center;
-          color: $black;
+          padding: percentage(12 / 320) percentage(10 / 320) 0;
           &.blue_txt {
             color: #009bdc;
-            padding: 0 10px 34px 10px;
+            margin-bottom: percentage(36 / 320);
           }
         }
+      }
+      figure {
+        float: right;
       }
     }
     &_painting {
       .enjoylife_sns {
-        left: 22px;
-        bottom: 47px;
+        float: right;
+        width: 50%;
+        @media screen and (max-width: 320px) {
+          .sns_bg {
+            padding: percentage(80 / 320) 0 0;
+          }
+          p {
+            font-size: 11px;
+          }
+        }
       }
       .sns_bg {
-        padding: 72px 0 0;
+        padding: percentage(80 / 320) percentage(10 / 320) 0;
         &:after {
           content: "";
           background: url('../images/ins_icon.png') no-repeat;
-          width: 30px;
+          width: percentage(47 / 320);
           height: 30px;
           position: absolute;
-          top: 30px;
+          top: percentage(25 / 320);
           left: 50%;
           transform: translate(-50%, 0);
           background-size: contain;
         }
         p {
-          color: $w;
+          padding: percentage(5.5 / 320) 0;
         }
       }
-    }
-    .sns_bg {
-      p {
-        font-size: 12px;
-        line-height: 18px;
+      figure {
+        float: left;
       }
     }
   }
@@ -314,16 +343,6 @@ main {
         .list_inner {
           position: relative;
           padding: 10px 0;
-          &:after {
-            content: "";
-            position: absolute;
-            background: url('../images/bee_icon.png')no-repeat;
-            width: 40px;
-            height: 85px;
-            bottom: -33px;
-            right: 0;
-            background-size: contain;
-          }
           span {
             background: $w;
             width: percentage(580 / 640);

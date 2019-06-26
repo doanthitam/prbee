@@ -574,6 +574,10 @@ textarea {
     background: #fff;
     animation: smoothScroll .5s forwards;
   }
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: none;
+  }
   @keyframes smoothScroll {
     0% {
       transform: translateY(-40px);
@@ -605,7 +609,7 @@ textarea {
     }
     60% {
       opacity: 1;
-      transform: translateX(-30px);
+      transform: translateX(30px);
     }
     80% {
       transform: translateX(10px);
@@ -645,14 +649,10 @@ textarea {
   .prbee_top .bee_character {
     width: 280px;
     animation-duration: 2s;
-    animation-duration: 2s;
-    animation-fill-mode: both;
   }
   .prbee_txt {
     padding: 0 58px;
     animation-duration: 1.5s;
-    animation-duration: 1.5s;
-    animation-fill-mode: both;
   }
   .prbee_txt p {
     font-size: 25px;
@@ -663,14 +663,10 @@ textarea {
   .prbee .price {
     width: 270px;
     animation-duration: 2s;
-    animation-duration: 2s;
-    animation-fill-mode: both;
   }
   .prbee .building {
     width: 100%;
     animation-duration: 1s;
-    animation-duration: 1s;
-    animation-fill-mode: both;
   }
   .intro {
     position: relative;
@@ -757,14 +753,13 @@ textarea {
   }
   .enjoylife_sns {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
   .enjoylife_eat {
     padding-bottom: 55px;
   }
   .enjoylife_eat .enjoylife_sns {
     right: 57px;
+    top: 155px;
   }
   .enjoylife_eat .sns_bg {
     padding: 43px 72px;
@@ -789,6 +784,8 @@ textarea {
   }
   .enjoylife_painting .enjoylife_sns {
     left: 57px;
+    top: 155px;
+    z-index: 1;
   }
   .enjoylife_painting .sns_bg {
     padding: 124px 50px 35px;
@@ -1462,27 +1459,15 @@ textarea {
   }
   .header .logo {
     width: 27.03125%;
-    padding: 3.90625% 0 3.125%;
+    padding: 10px 0;
     margin: 0 auto;
+    font-size: 0;
   }
   .header p {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 4.6875%;
-  }
-  .header nav {
-    position: relative;
-  }
-  .header nav:after {
-    content: "";
-    position: absolute;
-    background: url("../images/nav_bee_sp.png") no-repeat;
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    top: -48px;
-    right: 6.25%;
+    padding-bottom: 15px;
   }
   .header nav ul {
     display: -ms-flexbox;
@@ -1502,37 +1487,42 @@ textarea {
     font-weight: bold;
     color: #fff;
     transition: all .3s ease-in-out;
-    font-family: "Yugothic";
     display: block;
     text-decoration: none;
     width: 100%;
   }
+  .header,
+  nav,
+  nav ul,
+  nav ul li,
+  nav ul li a {
+    transition: .5s;
+  }
   .fixed-header {
+    transition: .5s;
     width: 100%;
-    transition: all .3s ease-in-out;
   }
-  .fixed-header .logo {
-    width: 17.1875%;
-    padding: 3.125% 0 2.34375%;
-    font-size: 0;
-    transition: all .3s ease-in-out;
+  .fixed-header .hide_sp {
+    transition: .5s;
+    margin-top: -114px;
   }
-  .fixed-header p {
-    font-size: 12px;
-    margin-bottom: 1.5625%;
+}
+
+@media screen and (max-width: 768px) and (max-width: 375px) {
+  .fixed-header .hide_sp {
+    margin-top: -108px;
   }
+}
+
+@media screen and (max-width: 768px) and (max-width: 320px) {
+  .fixed-header .hide_sp {
+    margin-top: -101px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .fixed-header nav {
-    position: relative;
-  }
-  .fixed-header nav:after {
-    content: "";
-    position: absolute;
-    background: url("../images/nav_bee_sp.png") no-repeat;
-    width: 50px;
-    height: 50px;
-    background-size: contain;
-    top: -48px;
-    right: 6.25%;
+    transition: .5s;
   }
   .visible-title {
     visibility: visible;
@@ -1625,78 +1615,107 @@ textarea {
     font-size: 12px;
   }
   main .enjoylife {
-    background: #dbedfa;
     padding: 11.71875% 0;
     margin-top: per(-6/640);
   }
   main .enjoylife figure {
-    width: 100%;
+    width: 50%;
   }
-  main .enjoylife .clearfix {
+  main .enjoylife .sns_bg {
+    background: #fff;
+    height: 100%;
     position: relative;
   }
-  main .enjoylife_sns {
-    position: absolute;
+  main .enjoylife .sns_bg p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #000;
+    text-align: center;
   }
   main .enjoylife_eat {
     padding-bottom: 8.59375%;
   }
   main .enjoylife_eat .enjoylife_sns {
-    left: 4px;
-    top: 50%;
-    transform: translateY(-50%);
+    float: left;
+    width: 50%;
+    height: 77.26562%;
   }
-  main .enjoylife_eat .sns_bg {
-    background: #fff;
-    width: 170px;
-    height: 170px;
-    border-radius: 100%;
-    position: relative;
-    padding: 24px 18px;
+}
+
+@media screen and (max-width: 768px) and (max-width: 320px) {
+  main .enjoylife_eat .enjoylife_sns .sns_bg:after {
+    width: 12.1875%;
+    top: 43.75%;
   }
+  main .enjoylife_eat .enjoylife_sns .sns_bg p {
+    padding: 3.125% 3.125% 0;
+  }
+  main .enjoylife_eat .enjoylife_sns .sns_bg p.blue_txt {
+    color: #009bdc;
+    margin-bottom: 9.375%;
+  }
+  main .enjoylife_eat .enjoylife_sns p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   main .enjoylife_eat .sns_bg:after {
     content: "";
     background: url("../images/twiter_icon.png") no-repeat;
-    width: 30px;
+    width: 14.0625%;
     height: 22px;
     position: absolute;
-    top: 76px;
+    top: 45.3125%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-size: contain;
   }
   main .enjoylife_eat .sns_bg p {
-    text-align: center;
-    color: #000;
+    padding: 3.75% 3.125% 0;
   }
   main .enjoylife_eat .sns_bg p.blue_txt {
     color: #009bdc;
-    padding: 0 10px 34px 10px;
+    margin-bottom: 11.25%;
+  }
+  main .enjoylife_eat figure {
+    float: right;
   }
   main .enjoylife_painting .enjoylife_sns {
-    left: 22px;
-    bottom: 47px;
+    float: right;
+    width: 50%;
   }
+}
+
+@media screen and (max-width: 768px) and (max-width: 320px) {
+  main .enjoylife_painting .enjoylife_sns .sns_bg {
+    padding: 25% 0 0;
+  }
+  main .enjoylife_painting .enjoylife_sns p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   main .enjoylife_painting .sns_bg {
-    padding: 72px 0 0;
+    padding: 25% 3.125% 0;
   }
   main .enjoylife_painting .sns_bg:after {
     content: "";
     background: url("../images/ins_icon.png") no-repeat;
-    width: 30px;
+    width: 14.6875%;
     height: 30px;
     position: absolute;
-    top: 30px;
+    top: 7.8125%;
     left: 50%;
     transform: translate(-50%, 0);
     background-size: contain;
   }
   main .enjoylife_painting .sns_bg p {
-    color: #fff;
+    padding: 1.71875% 0;
   }
-  main .enjoylife .sns_bg p {
-    font-size: 12px;
-    line-height: 18px;
+  main .enjoylife_painting figure {
+    float: left;
   }
   main .communicte {
     padding: 11.25% 0;
@@ -1746,16 +1765,6 @@ textarea {
   main .communicte_inner .right .list_inner {
     position: relative;
     padding: 10px 0;
-  }
-  main .communicte_inner .right .list_inner:after {
-    content: "";
-    position: absolute;
-    background: url("../images/bee_icon.png") no-repeat;
-    width: 40px;
-    height: 85px;
-    bottom: -33px;
-    right: 0;
-    background-size: contain;
   }
   main .communicte_inner .right .list_inner span {
     background: #fff;
