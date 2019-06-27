@@ -87,6 +87,9 @@ nav ul li a {
   margin-top: -114px;
 }
 @media screen and (max-width: 375px) {
+  .intro {
+    margin-top: 150px;
+  }
   .hide_sp {
     margin-top: -108px;
   }
@@ -106,7 +109,7 @@ nav ul li a {
 main {
   .prbee {
     background: $w;
-    padding: percentage(350 / 640) 0 percentage(58 / 640);
+    padding: percentage(58 / 640) 0 percentage(58 / 640);
     &_top {
       padding: 0 percentage(20 / 600);
       figure {
@@ -132,8 +135,14 @@ main {
   .building {
     width: 100%;
   }
+  @media screen and (max-width: 375px) {
+    .intro {
+      margin-top: 150px !important;
+    }
+  }
   .intro {
     position: relative;
+    margin-top: 156px;
     &_top {
       .banner {
         position: relative;

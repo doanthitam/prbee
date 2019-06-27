@@ -39,18 +39,18 @@ $('a[href^="#"]').click(function(){
   return false;
 });
 
-$(window).on('load scroll', function(){
-  var elem = $('.animated');
-  elem.each(function () {
-    var isAnimate = $(this).data('animate');
-    var elemOffset = $(this).offset().top;
-    var scrollPos = $(window).scrollTop();
-    var wh = $(window).height();
-
-    if(scrollPos > elemOffset - wh + (wh / 2)){
-      $(this).addClass(isAnimate);
-    }else{
-      $(this).removeClass(isAnimate);
-    }
-  });
-});
+// $(window).on('load scroll', function(){
+//   var elem = $('.animated');
+//   elem.each(function () {
+//     var isAnimate = $(this).data('animate');
+//     var elemOffset = $(this).offset().top;
+//     var scrollPos = $(window).scrollTop();
+//     var wh = $(window).height();
+//
+//     if(scrollPos > elemOffset - wh + (wh / 2)){
+//       $(this).addClass(isAnimate);
+//     }else{
+//       $(this).removeClass(isAnimate);
+//     }
+//   });
+// });

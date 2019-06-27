@@ -119,12 +119,6 @@ em {
   }
 }
 
-.bounceInLeft {
-  animation-name: bounceInLeft;
-}
-.bounceInRight {
-  animation-name: bounceInRight;
-}
 .fixed-header {
   position: fixed;
   top: 0;
@@ -134,11 +128,6 @@ em {
   background: $w;
   animation: smoothScroll .5s forwards;
 }
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: none;
-}
-//keyframes/
 @keyframes smoothScroll {
 	0% {
 		transform: translateY(-40px);
@@ -147,51 +136,6 @@ em {
 		transform: translateY(0px);
 	}
 }
-@keyframes bounceInLeft {
-   0% {
-      opacity: 0;
-      transform: translateX(-500px);
-   }
-   60% {
-      opacity: 1;
-      transform: translateX(30px);
-   }
-   80% {
-      transform: translateX(-10px);
-   }
-   100% {
-      transform: translateX(0);
-   }
-}
-@keyframes bounceInRight {
-   0% {
-      opacity: 0;
-      transform: translateX(500px);
-   }
-   60% {
-      opacity: 1;
-      transform: translateX(30px);
-   }
-   80% {
-      transform: translateX(10px);
-   }
-   100% {
-      transform: translateX(0);
-   }
-}
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-.fadeInDown {
-  animation-name: fadeInDown;
-}
 .visible-title {
   visibility: visible;
 }
@@ -199,18 +143,16 @@ em {
   padding-top: 123px;
 }
 .prbee {
-  padding: 34px 0 49px;
+  padding: 57px 0 78px;
   &_top {
     display: flex;
     align-items: center;
     .bee_character {
       width: 280px;
-      animation-duration: 2s;
     }
   }
   &_txt {
     padding: 0 58px;
-    animation-duration: 1.5s;
     p {
       font-size: 25px;
       letter-spacing: 2px;
@@ -220,12 +162,9 @@ em {
   }
   .price {
     width: 270px;
-    animation-duration: 2s;
-    // margin: -24px auto 32px;
   }
   .building {
     width: 100%;
-    animation-duration: 1s;
   }
 }
 .intro {
@@ -271,18 +210,18 @@ em {
     .left {
       width: 50%;
       p {
-        opacity: 0.85;
         color: $w;
         font-size: 17px;
-        line-height: 32px;
-        padding: 50px 111px;
+        line-height: 38px;
+        padding: 58px 0 54px;
+        text-align: center;
       }
     }
     .right {
       width: 50%;
       p {
-        color: $navy;
-        background: $w;
+        background: rgba(255, 255, 255, 0.5);
+        color: $w;
         padding: 58px 100px 75px 30px;
         span {
           display: block;
@@ -320,10 +259,6 @@ em {
     .enjoylife_sns {
       right: 57px;
       top: 155px;
-      // animation-name: bounceInRight;
-    }
-    figure {
-      // animation-name: bounceInLeft;
     }
     .sns_bg {
       padding: 43px 72px;
@@ -348,15 +283,12 @@ em {
     }
   }
   &_painting {
-    // display: flex;
-    // align-items: center;
     .enjoylife_sns {
       left: 57px;
       top: 155px;
       z-index: 1;
     }
     figure {
-      // animation-name: bounceInRight;
     }
     .sns_bg {
       padding: 124px 50px 35px;
