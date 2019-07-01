@@ -79,30 +79,30 @@ nav ul li,
 nav ul li a {
   transition: .5s;
 }
-.fixed-header {
-  transition: .5s;
-  width: 100%;
-.hide_sp {
-  transition: .5s;
-  margin-top: -114px;
-}
-@media screen and (max-width: 375px) {
-  .intro {
-    margin-top: 150px;
-  }
-  .hide_sp {
-    margin-top: -108px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .hide_sp {
-    margin-top: -101px;
-  }
-}
-  nav {
-    transition: .5s;
-  }
-}
+// .fixed-header {
+//   transition: .5s;
+//   width: 100%;
+// .hide_sp {
+//   transition: .5s;
+//   margin-top: -114px;
+// }
+// @media screen and (max-width: 375px) {
+//   .intro {
+//     margin-top: 150px;
+//   }
+//   .hide_sp {
+//     margin-top: -108px;
+//   }
+// }
+// @media screen and (max-width: 320px) {
+//   .hide_sp {
+//     margin-top: -101px;
+//   }
+// }
+//   nav {
+//     transition: .5s;
+//   }
+// }
 .visible-title {
   visibility: visible;
 }
@@ -143,31 +143,26 @@ main {
   .intro {
     position: relative;
     margin-top: 156px;
-    &_top {
-      .banner {
-        position: relative;
-        figure {
-          width: 100%;
-        }
-        h2 {
-          position: absolute;
-          top: percentage(50 / 600);
-          left: percentage(60 / 600);
-          font-size: 18px;
-          color: $navy;
-          letter-spacing: 2px;
-          span {
-            font-size: 14px;
-            color: $w;
-            display: block;
-            letter-spacing: 1px;
-          }
-          em {
-            color: $w;
-            font-style: normal;
-            letter-spacing: 2px;
-          }
-        }
+    figure {
+      width: 100%;
+    }
+    h2 {
+      position: absolute;
+      top: percentage(50 / 600);
+      left: percentage(60 / 600);
+      font-size: 18px;
+      color: $navy;
+      letter-spacing: 2px;
+      span {
+        font-size: 14px;
+        color: $w;
+        display: block;
+        letter-spacing: 1px;
+      }
+      em {
+        color: $w;
+        font-style: normal;
+        letter-spacing: 2px;
       }
     }
     &_txt {
