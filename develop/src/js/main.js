@@ -3,16 +3,18 @@ $(window).on('resize',function(){
 })
 var backtotop = $('#scrollTop');
 $(window).scroll(function(){
-  if ($(window).scrollTop() >= 300) {
+  if ($(window).scrollTop() >= 500){
+    backtotop.addClass('show');
+  }else{
+    backtotop.removeClass('show');
+  }
+  if ($(window).scrollTop() >= 0) {
     $('.header').addClass('fixed-header');
     $('.header .logo').addClass('visible-title');
-    backtotop.addClass('show');
-  }
-  else {
-      $('.header').removeClass('fixed-header');
-      $('.header .logo').removeClass('visible-title');
-      backtotop.removeClass('show');
-  }
+    }else {
+        $('.header').removeClass('fixed-header');
+        $('.header .logo').removeClass('visible-title');
+    }
 });
 backtotop.on('click', function(e) {
   e.preventDefault();
